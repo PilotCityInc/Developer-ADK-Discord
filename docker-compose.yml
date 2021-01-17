@@ -3,9 +3,9 @@ networks:
   pdk:
     driver: bridge
 services:
-  microapp: #in container-based development
+  discord: #in container-based development
     image: pilotcity/boiler
-    container_name: microapp
+    container_name: discord
     environment:
       - NODE_ENV=development
       - CHOKIDAR_USEPOLLING=true
