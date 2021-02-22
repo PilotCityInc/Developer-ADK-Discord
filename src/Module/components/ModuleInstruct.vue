@@ -85,12 +85,12 @@ export default defineComponent({
     //   }
     // });
     const boilerInstructions = ref([
-      'Click resource link',
-      'Review, complete or understand resource contents',
-      'Mark completed until all finished'
+      'Create or connect your Discord account',
+      'Chat with your team, all teams or greater PilotCity community',
+      'Explore the PilotCity community via Discord'
     ]);
     const goal = ref([
-      'To research employer-provided resources, links, examples, possibilities & direction for projects'
+      'To chat with your team, all teams or the greater PilotCity community about your project'
     ]);
     // function populate() {
     //   boilerInstructions.value.push('');

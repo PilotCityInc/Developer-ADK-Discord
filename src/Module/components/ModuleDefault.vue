@@ -45,7 +45,71 @@
     <div class="module-edit__container">
       <!-- ENTER CONTENT HERE -->
       <!-- DESIGN YOUR ACTIVITY HERE / COMMENT OUT WHEN YOU'VE STARTED DESIGNING -->
-      <div class="module-default__none">Design your activity here</div>
+      <!-- <div class="module-default__none">Design your activity here</div> -->
+      <div class="d-flex justify-center flex-column">
+        <!-- <v-btn class="mt-2 font-weight-bold" x-large depressed dark color="#ae90b0"
+          >Click here when done (Mongo Changestream)</v-btn
+        > -->
+
+        <!-- PRE-LINKED DISCORD START -->
+
+        <div class="overline d-flex justify-center font-weight-bold">
+          Chat with team & PilotCity student community
+        </div>
+        <v-btn rounded class="ma-2 font-weight-bold" x-large depressed dark color="#ae90b0"
+          ><v-icon left>mdi-discord</v-icon>Create Discord Account</v-btn
+        >
+        <v-btn rounded class="ma-2 font-weight-bold" x-large depressed outlined color="#ae90b0"
+          >Connect my account</v-btn
+        >
+
+        <!-- PRE-LINKED DISCORD END -->
+
+        <!-- POST-LINKED DISCORD START -->
+
+        <v-row>
+          <v-avatar class="ma-3 lighten-2" color="grey" size="60"></v-avatar>
+
+          <v-text-field
+            class="ma-3"
+            append-outer-icon="mdi-discord"
+            rounded
+            x-large
+            readonly
+            outlined
+            placeholder="Username #2938"
+            label="Your Discord Username"
+          ></v-text-field>
+        </v-row>
+
+        <v-btn
+          rounded
+          class="ma-2 pl-auto pr-auto font-weight-bold"
+          x-large
+          depressed
+          dark
+          color="#ae90b0"
+          ><v-icon left>mdi-account-supervisor-circle</v-icon>Team Chat</v-btn
+        >
+
+        <v-btn
+          rounded
+          outlined
+          class="ma-2 pl-auto pr-auto font-weight-bold"
+          x-large
+          depressed
+          dark
+          color="#ae90b0"
+          >All Teams Chat</v-btn
+        >
+        <v-btn rounded class="ma-2 font-weight-bold" color="white" x-small depressed
+          >Link different Discord account</v-btn
+        >
+
+        <!-- POST-LINKED DISCORD END -->
+
+        <!-- Discord to coordinate teams, and post events, communication with employers, link your Discord account below: -->
+      </div>
     </div>
   </v-container>
 </template>

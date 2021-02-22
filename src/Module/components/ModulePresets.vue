@@ -4,6 +4,22 @@
       <!-- <v-divider class="presets__divider"></v-divider> -->
       <div class="presets__section-title">General</div>
       <div class="presets__nopresets">No tweaking necessary</div>
+
+      <!-- <div class="d-flex flex-row">
+        <v-select></v-select><v-text-field></v-text-field> <v-btn>Send to team</v-btn>
+      </div> -->
+      <!-- <div class="d-flex flex-column">
+        <v-text-field
+          large
+          outlined
+          rounded
+          label="Send announcement message"
+          placeholder="What important message would you like to send students?"
+        ></v-text-field>
+        <v-btn class="font-weight-bold" dark color="#ae90b0" depressed rounded large
+          >Send announcement message</v-btn
+        >
+      </div> -->
       <v-divider class="presets__divider"></v-divider>
       <div class="presets__section-title">Instructions</div>
       <Instruct v-model="setupInstructions" />
