@@ -4,10 +4,9 @@ networks:
     driver: bridge
 services:
   discord: #in container-based development
+    build: . #enable this when modifyingh dependencies
+    # image: pilotcity/boiler
     container_name: discord
-    build: 
-      context: .
-      dockerfile: client.dockerfile 
     environment:
       - NODE_ENV=development
       - CHOKIDAR_USEPOLLING=true
@@ -18,7 +17,7 @@ services:
       - ./:/usr/src/app
       - usr/src/app/node_modules
     ports:
-      - 8050:8080
+      - 8099:8080
     stdin_open: true
     tty: true
     command: ["yarn","run","serve"]
