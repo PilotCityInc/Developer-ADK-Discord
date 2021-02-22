@@ -60,7 +60,7 @@
           ><v-icon left>mdi-discord</v-icon>Create Discord Account</v-btn
         >
         <v-btn rounded class="ma-2 font-weight-bold" x-large depressed outlined color="#ae90b0"
-          >Connect my account</v-btn
+          >Connect existing account</v-btn
         > -->
 
         <!-- PRE-LINKED DISCORD END -->
@@ -89,7 +89,7 @@
           depressed
           dark
           color="#ae90b0"
-          ><v-icon left>mdi-account-supervisor-circle</v-icon>Team Chat</v-btn
+          ><v-icon left>mdi-account-supervisor-circle</v-icon>Go to Team Chat</v-btn
         >
 
         <v-btn
@@ -100,7 +100,18 @@
           depressed
           dark
           color="#ae90b0"
-          >All Teams Chat</v-btn
+          >Chat with everyone in Program</v-btn
+        >
+
+        <v-btn
+          rounded
+          outlined
+          class="ma-2 pl-auto pr-auto font-weight-bold"
+          x-large
+          depressed
+          dark
+          color="grey lighten-1"
+          >Learn more about PilotCity Discord</v-btn
         >
         <v-btn rounded class="ma-2 font-weight-bold" color="white" x-small depressed
           >Link different Discord account</v-btn
