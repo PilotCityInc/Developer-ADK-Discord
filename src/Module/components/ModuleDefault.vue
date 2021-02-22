@@ -53,7 +53,7 @@
 
         <!-- PRE-LINKED DISCORD START -->
 
-        <div class="overline d-flex justify-center font-weight-bold">
+        <!-- <div class="overline d-flex justify-center font-weight-bold">
           Chat with team & PilotCity student community
         </div>
         <v-btn rounded class="ma-2 font-weight-bold" x-large depressed dark color="#ae90b0"
@@ -61,7 +61,7 @@
         >
         <v-btn rounded class="ma-2 font-weight-bold" x-large depressed outlined color="#ae90b0"
           >Connect my account</v-btn
-        >
+        > -->
 
         <!-- PRE-LINKED DISCORD END -->
 
