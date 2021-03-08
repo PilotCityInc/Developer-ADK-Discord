@@ -82,7 +82,7 @@
           ></v-text-field>
         </v-row>
 
-        <v-btn
+        <!-- <v-btn
           rounded
           class="ma-2 pl-auto pr-auto font-weight-bold"
           x-large
@@ -90,9 +90,9 @@
           dark
           color="#ae90b0"
           ><v-icon left>mdi-account-supervisor-circle</v-icon>Go to Team Chat</v-btn
-        >
+        > -->
 
-        <v-btn
+        <!-- <v-btn
           rounded
           outlined
           class="ma-2 pl-auto pr-auto font-weight-bold"
@@ -101,21 +101,25 @@
           dark
           color="#ae90b0"
           >Chat with everyone in Program</v-btn
+        > -->
+        <a
+          href="https://discord.com/channels/688863898686062675/738994257200939068"
+          target="_blank"
+        >
+          <v-btn
+            rounded
+            class="ma-2 pl-auto pr-auto font-weight-bold"
+            x-large
+            depressed
+            dark
+            color="#ae90b0"
+            ><v-icon left>mdi-account-supervisor-circle</v-icon>Go to PilotCity Discord</v-btn
+          ></a
         >
 
-        <v-btn
-          rounded
-          outlined
-          class="ma-2 pl-auto pr-auto font-weight-bold"
-          x-large
-          depressed
-          dark
-          color="grey lighten-1"
-          >Learn more about PilotCity Discord</v-btn
-        >
-        <v-btn rounded class="ma-2 font-weight-bold" color="white" x-small depressed
+        <!-- <v-btn rounded class="ma-2 font-weight-bold" color="white" x-small depressed
           >Link different Discord account</v-btn
-        >
+        > -->
 
         <!-- POST-LINKED DISCORD END -->
 
