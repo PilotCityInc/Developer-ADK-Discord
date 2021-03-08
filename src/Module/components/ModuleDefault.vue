@@ -57,11 +57,25 @@
           <!-- Chat with team & PilotCity student community -->
           Join the PilotCity online student community
         </div>
-        <v-btn rounded class="ma-2 font-weight-bold" x-large depressed dark color="#ae90b0"
-          ><v-icon left>mdi-discord</v-icon>Create Discord Account</v-btn
+
+        <a
+          href="https://discord.com/register?redirect_to=%2Foauth2%2Fauthorize%3Fclient_id%3D818178557939023912%26redirect_uri%3Dhttps%253A%252F%252Fpilotcity.com%252Fdiscordconfirmation%26response_type%3Dcode%26scope%3Didentify%2520email%2520guilds.join%2520gdm.join"
+          style="text-decoration: none"
+          target="_blank"
         >
-        <v-btn rounded class="ma-2 font-weight-bold" x-large depressed outlined color="#ae90b0"
-          >Connect existing account</v-btn
+          <v-btn rounded class="ma-2 font-weight-bold" x-large depressed dark color="#ae90b0"
+            ><v-icon left>mdi-discord</v-icon>Create Discord Account</v-btn
+          ></a
+        >
+
+        <a
+          href="https://discord.com/api/oauth2/authorize?client_id=818178557939023912&redirect_uri=https%3A%2F%2Fpilotcity.com%2Fdiscordconfirmation&response_type=code&scope=identify%20email%20guilds.join%20gdm.join"
+          style="text-decoration: none"
+          target="_blank"
+        >
+          <v-btn rounded class="ma-2 font-weight-bold" x-large depressed outlined color="#ae90b0"
+            >Connect existing account</v-btn
+          ></a
         >
 
         <!-- PRE-LINKED DISCORD END -->
