@@ -53,15 +53,16 @@
 
         <!-- PRE-LINKED DISCORD START -->
 
-        <!-- <div class="overline d-flex justify-center font-weight-bold">
-          Chat with team & PilotCity student community
+        <div class="overline d-flex justify-center font-weight-bold">
+          <!-- Chat with team & PilotCity student community -->
+          Join the PilotCity online student community
         </div>
         <v-btn rounded class="ma-2 font-weight-bold" x-large depressed dark color="#ae90b0"
           ><v-icon left>mdi-discord</v-icon>Create Discord Account</v-btn
         >
         <v-btn rounded class="ma-2 font-weight-bold" x-large depressed outlined color="#ae90b0"
           >Connect existing account</v-btn
-        > -->
+        >
 
         <!-- PRE-LINKED DISCORD END -->
 
@@ -102,13 +103,15 @@
           color="#ae90b0"
           >Chat with everyone in Program</v-btn
         > -->
+        <!-- <div class="d-flex justify-center"> -->
         <a
           href="https://discord.com/channels/688863898686062675/738994257200939068"
+          style="text-decoration: none"
           target="_blank"
         >
           <v-btn
             rounded
-            class="ma-2 pl-auto pr-auto font-weight-bold"
+            class="module-default__goto-discord ma-2 pl-auto pr-auto font-weight-bold"
             x-large
             depressed
             dark
@@ -116,6 +119,7 @@
             ><v-icon left>mdi-account-supervisor-circle</v-icon>Go to PilotCity Discord</v-btn
           ></a
         >
+        <!-- </div> -->
 
         <!-- <v-btn rounded class="ma-2 font-weight-bold" color="white" x-small depressed
           >Link different Discord account</v-btn
@@ -155,6 +159,9 @@ export default {
 
 <style lang="scss">
 .module-default {
+  &__goto-discord {
+    width: 100%;
+  }
   &__none {
     border-radius: 5px;
     // border: 1px solid #dedede;
