@@ -1,6 +1,6 @@
 <template>
   <v-app>
-    <Module :user-doc="userDoc" />
+    <Module :user-doc="userDoc" :user-type="userTypeStub" />
   </v-app>
 </template>
 
@@ -29,8 +29,9 @@ export default Vue.extend({
         }
       }
     };
+    const userTypeStub = 'organizer';
 
-    return { userDoc };
+    return { userDoc, userTypeStub };
   }
 });
 </script>
