@@ -17,7 +17,7 @@ export default Vue.extend({
   setup() {
     const userDoc = {
       data: {
-        discordAccessToken: undefined // * test by putting your account's access token here
+        discordAccessToken: 'zWXhmAgKJtSN461vUWv3f1jmBUjK68' // * test by putting your account's access token here
       },
       changeStream: {
         on(event, callback) {

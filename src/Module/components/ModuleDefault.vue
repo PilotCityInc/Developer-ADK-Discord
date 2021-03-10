@@ -104,7 +104,7 @@
             x-large
             readonly
             outlined
-            :placeholder="discordUsername"
+            :value="discordUsername"
             label="Your Discord Username"
           ></v-text-field>
         </v-row>
