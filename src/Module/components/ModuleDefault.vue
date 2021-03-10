@@ -46,60 +46,69 @@
       <!-- ENTER CONTENT HERE -->
       <!-- DESIGN YOUR ACTIVITY HERE / COMMENT OUT WHEN YOU'VE STARTED DESIGNING -->
       <!-- <div class="module-default__none">Design your activity here</div> -->
-      <div class="d-flex justify-center flex-column">
-        <!-- <v-btn class="mt-2 font-weight-bold" x-large depressed dark color="#ae90b0"
+
+      <!-- <v-btn class="mt-2 font-weight-bold" x-large depressed dark color="#ae90b0"
           >Click here when done (Mongo Changestream)</v-btn
         > -->
 
-        <!-- PRE-LINKED DISCORD START -->
+      <!-- PRE-LINKED DISCORD START -->
 
-        <div class="overline d-flex justify-center font-weight-bold">
-          <!-- Chat with team & PilotCity student community -->
-          Join the PilotCity online student community
-        </div>
+      <div class="overline d-flex justify-center font-weight-bold">
+        <!-- Chat with team & PilotCity student community -->
+        Join the PilotCity online student community
+      </div>
+      <a
+        href="https://discord.com/register?redirect_to=%2Foauth2%2Fauthorize%3Fclient_id%3D818178557939023912%26redirect_uri%3Dhttps%253A%252F%252Fpilotcity.com%252Fdiscordconfirmation%26response_type%3Dcode%26scope%3Didentify%2520email%2520guilds.join%2520gdm.join"
+        style="text-decoration: none"
+        target="_blank"
+      >
+        <v-btn
+          rounded
+          class="module-default__goto-discord ma-2 pl-auto pr-auto font-weight-bold"
+          x-large
+          depressed
+          dark
+          color="#ae90b0"
+          ><v-icon left>mdi-discord</v-icon>Create Discord Account</v-btn
+        ></a
+      >
+      <a
+        href="https://discord.com/api/oauth2/authorize?client_id=818178557939023912&redirect_uri=https%3A%2F%2Fpilotcity.com%2Fdiscordconfirmation&response_type=code&scope=identify%20email%20guilds.join%20gdm.join"
+        style="text-decoration: none"
+        target="_blank"
+      >
+        <v-btn
+          rounded
+          class="module-default__goto-discord ma-2 pl-auto pr-auto font-weight-bold"
+          x-large
+          depressed
+          outlined
+          color="#ae90b0"
+          >Connect existing account</v-btn
+        ></a
+      >
+      <!-- PRE-LINKED DISCORD END -->
 
-        <a
-          href="https://discord.com/register?redirect_to=%2Foauth2%2Fauthorize%3Fclient_id%3D818178557939023912%26redirect_uri%3Dhttps%253A%252F%252Fpilotcity.com%252Fdiscordconfirmation%26response_type%3Dcode%26scope%3Didentify%2520email%2520guilds.join%2520gdm.join"
-          style="text-decoration: none"
-          target="_blank"
-        >
-          <v-btn rounded class="ma-2 font-weight-bold" x-large depressed dark color="#ae90b0"
-            ><v-icon left>mdi-discord</v-icon>Create Discord Account</v-btn
-          ></a
-        >
+      <!-- POST-LINKED DISCORD START -->
 
-        <a
-          href="https://discord.com/api/oauth2/authorize?client_id=818178557939023912&redirect_uri=https%3A%2F%2Fpilotcity.com%2Fdiscordconfirmation&response_type=code&scope=identify%20email%20guilds.join%20gdm.join"
-          style="text-decoration: none"
-          target="_blank"
-        >
-          <v-btn rounded class="ma-2 font-weight-bold" x-large depressed outlined color="#ae90b0"
-            >Connect existing account</v-btn
-          ></a
-        >
+      <v-row>
+        <v-avatar class="ma-3 lighten-2" color="grey" size="60"
+          ><img :src="avatarSource"
+        /></v-avatar>
 
-        <!-- PRE-LINKED DISCORD END -->
+        <v-text-field
+          class="ma-3"
+          append-outer-icon="mdi-discord"
+          rounded
+          x-large
+          readonly
+          outlined
+          :placeholder="discordUsername"
+          label="Your Discord Username"
+        ></v-text-field>
+      </v-row>
 
-        <!-- POST-LINKED DISCORD START -->
-
-        <v-row>
-          <v-avatar class="ma-3 lighten-2" color="grey" size="60"
-            ><img :src="avatarSource"
-          /></v-avatar>
-
-          <v-text-field
-            class="ma-3"
-            append-outer-icon="mdi-discord"
-            rounded
-            x-large
-            readonly
-            outlined
-            :placeholder="discordUsername"
-            label="Your Discord Username"
-          ></v-text-field>
-        </v-row>
-
-        <!-- <v-btn
+      <!-- <v-btn
           rounded
           class="ma-2 pl-auto pr-auto font-weight-bold"
           x-large
@@ -109,7 +118,7 @@
           ><v-icon left>mdi-account-supervisor-circle</v-icon>Go to Team Chat</v-btn
         > -->
 
-        <!-- <v-btn
+      <!-- <v-btn
           rounded
           outlined
           class="ma-2 pl-auto pr-auto font-weight-bold"
@@ -119,32 +128,31 @@
           color="#ae90b0"
           >Chat with everyone in Program</v-btn
         > -->
-        <!-- <div class="d-flex justify-center"> -->
-        <a
-          href="https://discord.com/channels/688863898686062675/738994257200939068"
-          style="text-decoration: none"
-          target="_blank"
-        >
-          <v-btn
-            rounded
-            class="module-default__goto-discord ma-2 pl-auto pr-auto font-weight-bold"
-            x-large
-            depressed
-            dark
-            color="#ae90b0"
-            ><v-icon left>mdi-account-supervisor-circle</v-icon>Go to PilotCity Discord</v-btn
-          ></a
-        >
-        <!-- </div> -->
+      <!-- <div class="d-flex justify-center"> -->
+      <a
+        href="https://discord.com/channels/688863898686062675/738994257200939068"
+        style="text-decoration: none"
+        target="_blank"
+      >
+        <v-btn
+          rounded
+          class="module-default__goto-discord ma-2 pl-auto pr-auto font-weight-bold"
+          x-large
+          depressed
+          dark
+          color="#ae90b0"
+          ><v-icon left>mdi-account-supervisor-circle</v-icon>Go to PilotCity Discord</v-btn
+        ></a
+      >
+      <!-- </div> -->
 
-        <!-- <v-btn rounded class="ma-2 font-weight-bold" color="white" x-small depressed
+      <!-- <v-btn rounded class="ma-2 font-weight-bold" color="white" x-small depressed
           >Link different Discord account</v-btn
         > -->
 
-        <!-- POST-LINKED DISCORD END -->
+      <!-- POST-LINKED DISCORD END -->
 
-        <!-- Discord to coordinate teams, and post events, communication with employers, link your Discord account below: -->
-      </div>
+      <!-- Discord to coordinate teams, and post events, communication with employers, link your Discord account below: -->
     </div>
   </v-container>
 </template>
