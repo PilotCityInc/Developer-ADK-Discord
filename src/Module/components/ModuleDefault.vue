@@ -150,23 +150,31 @@
 </template>
 
 <script lang="ts">
-import { ref, reactive, toRefs } from '@vue/composition-api';
+import { ref, reactive, toRefs, PropType, defineComponent } from '@vue/composition-api';
 import axios from 'axios';
 import Instruct from './ModuleInstruct.vue';
+import { MongoDoc } from '../types';
 
 const API_ENDPOINT = 'https://discord.com/api/users/@me';
 
-export default {
+export default defineComponent({
   name: 'ModuleDefault',
   components: {
     Instruct
   },
-  setup() {
+  props: {
+    userDoc: {
+      required: true,
+      type: Object as PropType<MongoDoc>
+    }
+  },
+  setup(props) {
     const state = reactive({
       avatarSource: '',
       discordUsername: 'Username #2938',
       accessToken: ''
     });
+
     const getUser = async () => {
       const {
         data: { id, avatar, username, discriminator }
@@ -181,12 +189,25 @@ export default {
       state.discordUsername = `${username} #${discriminator}`;
     };
 
-    window.onfocus = () => {
+    if (props.userDoc.data.discordAccessToken) {
+      // when a user already has an access token
+      state.accessToken = props.userDoc.data.discordAccessToken;
       getUser();
-    };
-    window.onblur = () => {
+    }
+
+    props.userDoc.changeStream.on('change', ({ fullDocument }) => {
+      state.accessToken = fullDocument.accessToken;
       getUser();
-    };
+    });
+
+    // ! if no changeStream, use this with a db call
+    // window.onfocus = () => {
+    //   getUser();
+    // };
+
+    // window.onblur = () => {
+    //   getUser();
+    // };
 
     const setupInstructions = ref({
       description: '',
@@ -199,7 +220,7 @@ export default {
       showInstructions
     };
   }
-};
+});
 </script>
 
 <style lang="scss">

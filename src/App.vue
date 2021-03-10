@@ -1,12 +1,11 @@
 <template>
   <v-app>
-    <Module :db="db" />
+    <Module :user-doc="userDoc" />
   </v-app>
 </template>
 
 <script lang="ts">
 import Vue from 'vue';
-import { Db } from 'mongodb';
 import Module from './Module/Module.vue';
 
 export default Vue.extend({
@@ -16,18 +15,22 @@ export default Vue.extend({
     Module
   },
   setup() {
-    const db: Db = {
-      collection(name) {
-        return {
-          findOne(query) {
-            return {
+    const userDoc = {
+      data: {
+        discordAccessToken: '' // * test by putting your account's access token here
+      },
+      changeStream: {
+        on(event, callback) {
+          return {
+            fullDocument: {
               discordAccessToken: ''
-            };
-          }
-        };
+            }
+          };
+        }
       }
     };
-    return { db };
+
+    return { userDoc };
   }
 });
 </script>

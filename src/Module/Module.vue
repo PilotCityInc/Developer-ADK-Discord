@@ -102,16 +102,14 @@
           </div>
         </div>
         <div class="module__page">
-          <keep-alive>
-            <component :is="getComponent" />
-          </keep-alive>
+          <keep-alive> <component :is="getComponent" :user-doc="userDoc" /> </keep-alive>
         </div>
       </div>
     </div>
     <!-- TIMELINE START -->
 
     <!-- <template>
-      <v-container v-if="currentPage == 'preview'" style="max-width: 675px">
+      <v-container v-if="current-page == 'preview'" style="max-width: 675px">
         <v-menu offset-y>
           <template v-slot:activator="{ on, attrs }">
             <v-btn v-bind="attrs" small :color="selectedColor" dark depressed v-on="on"
@@ -261,35 +259,26 @@ body {
 }
 </style>
 <script lang="ts">
-import { computed, reactive, ref, toRefs, defineComponent } from '@vue/composition-api';
+import { computed, reactive, ref, toRefs, defineComponent, PropType } from '@vue/composition-api';
 import '../styles/module.scss';
-// import { Collection } from 'mongodb';
+import { MongoDoc } from './types';
 import * as Module from './components';
 
 export default defineComponent({
   name: 'ModuleName',
-
   components: {
     'module-monitor': Module.Monitor,
     'module-setup': Module.Setup,
     'module-presets': Module.Presets,
     'module-preview': Module.Default
   },
-  //   props: {
-  // programCollection: {
-  //   required: true,
-  //   type: Object as PropType<Collection>
-  // },
-  // programId: {
-  //   require: true,
-  //   type: String
-  // }
-  //   },
+  props: {
+    userDoc: {
+      required: true,
+      type: Object as PropType<MongoDoc>
+    }
+  },
   setup() {
-    //
-    // props.programCollection.findOne({
-    //   _id: props.programId
-    // });
     // ENTER ACTIVITY NAME BELOW
     const moduleName = ref('Community');
     const page = reactive({
