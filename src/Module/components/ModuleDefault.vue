@@ -83,7 +83,9 @@
         <!-- POST-LINKED DISCORD START -->
 
         <v-row>
-          <v-avatar class="ma-3 lighten-2" color="grey" size="60"></v-avatar>
+          <v-avatar class="ma-3 lighten-2" color="grey" size="60"
+            ><img :src="avatarSource"
+          /></v-avatar>
 
           <v-text-field
             class="ma-3"
@@ -92,7 +94,7 @@
             x-large
             readonly
             outlined
-            placeholder="Username #2938"
+            :placeholder="discordUsername"
             label="Your Discord Username"
           ></v-text-field>
         </v-row>
@@ -148,22 +150,51 @@
 </template>
 
 <script lang="ts">
-import { ref } from '@vue/composition-api';
+import { ref, reactive, toRefs } from '@vue/composition-api';
+import axios from 'axios';
 import Instruct from './ModuleInstruct.vue';
+
+const API_ENDPOINT = 'https://discord.com/api/users/@me';
 
 export default {
   name: 'ModuleDefault',
   components: {
     Instruct
   },
-  apollo: {},
-  data() {
+  setup() {
+    const state = reactive({
+      avatarSource: '',
+      discordUsername: '',
+      accessToken: ''
+    });
+    const getUser = async () => {
+      const {
+        data: { id, avatar, username, discriminator }
+      } = await axios.get(API_ENDPOINT, {
+        headers: { Authorization: `Bearer ${state.accessToken}` }
+      });
+      state.avatarSource =
+        avatar !== null
+          ? `https://cdn.discordapp.com/avatars/${id}/${avatar}.png`
+          : 'https://discordapp.com/assets/322c936a8c8be1b803cd94861bdfa868.png';
+
+      state.discordUsername = `${username} #${discriminator}`;
+    };
+
+    window.onfocus = () => {
+      getUser();
+    };
+    window.onblur = () => {
+      getUser();
+    };
+
     const setupInstructions = ref({
       description: '',
       instructions: ['', '', '']
     });
     const showInstructions = ref(true);
     return {
+      ...toRefs(state),
       setupInstructions,
       showInstructions
     };

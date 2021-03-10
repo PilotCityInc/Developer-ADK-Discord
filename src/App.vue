@@ -1,12 +1,12 @@
 <template>
   <v-app>
-    <Module />
+    <Module :db="db" />
   </v-app>
 </template>
 
 <script lang="ts">
 import Vue from 'vue';
-// import ApolloExample from './components/ApolloExample.vue';
+import { Db } from 'mongodb';
 import Module from './Module/Module.vue';
 
 export default Vue.extend({
@@ -14,6 +14,20 @@ export default Vue.extend({
 
   components: {
     Module
+  },
+  setup() {
+    const db: Db = {
+      collection(name) {
+        return {
+          findOne(query) {
+            return {
+              discordAccessToken: ''
+            };
+          }
+        };
+      }
+    };
+    return { db };
   }
 });
 </script>
