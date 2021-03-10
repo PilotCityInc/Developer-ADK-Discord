@@ -164,7 +164,7 @@ export default {
   setup() {
     const state = reactive({
       avatarSource: '',
-      discordUsername: '',
+      discordUsername: 'Username #2938',
       accessToken: ''
     });
     const getUser = async () => {
