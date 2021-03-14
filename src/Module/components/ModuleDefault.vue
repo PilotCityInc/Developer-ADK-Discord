@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <v-container class="module-default pa-0">
     <div class="module-default__instructions">
       <v-expansion-panels v-model="showInstructions" class="module-default__instructions" flat>
         <v-expansion-panel>
@@ -156,7 +156,7 @@
 
       <!-- Discord to coordinate teams, and post events, communication with employers, link your Discord account below: -->
     </div>
-  </div>
+  </v-container>
 </template>
 
 <script lang="ts">
