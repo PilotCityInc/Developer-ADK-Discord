@@ -42,7 +42,7 @@
       buffer-value="100"
       stream
     />
-    <div class="module-edit__container mt-12">
+    <div class="pa-12 mt-12">
       <!-- ENTER CONTENT HERE -->
       <!-- DESIGN YOUR ACTIVITY HERE / COMMENT OUT WHEN YOU'VE STARTED DESIGNING -->
       <!-- <div class="module-default__none">Design your activity here</div> -->
@@ -109,27 +109,17 @@
           ></v-text-field>
         </v-row>
 
-        <!-- <v-btn
-          rounded
-          class="ma-2 pl-auto pr-auto font-weight-bold"
-          x-large
-          depressed
-          dark
-          color="#ae90b0"
-          ><v-icon left>mdi-account-supervisor-circle</v-icon>Go to Team Chat</v-btn
-        > -->
-
-        <!-- <v-btn
-          rounded
-          outlined
-          class="ma-2 pl-auto pr-auto font-weight-bold"
-          x-large
-          depressed
-          dark
-          color="#ae90b0"
-          >Chat with everyone in Program</v-btn
-        > -->
-        <!-- <div class="d-flex justify-center"> -->
+        <a href="" style="text-decoration: none" target="_blank">
+          <v-btn
+            rounded
+            class="module-default__goto-discord ma-2 pl-auto pr-auto font-weight-bold"
+            x-large
+            depressed
+            disabled
+            color="#ae90b0"
+            ><v-icon left>mdi-account-supervisor-circle</v-icon>Chat with Team</v-btn
+          >
+        </a>
         <a
           href="https://discord.com/channels/688863898686062675/738994257200939068"
           style="text-decoration: none"
@@ -142,9 +132,33 @@
             depressed
             dark
             color="#ae90b0"
-            ><v-icon left>mdi-account-supervisor-circle</v-icon>Go to PilotCity Discord</v-btn
+            ><v-icon left>mdi-discord</v-icon>Chat with community</v-btn
           ></a
         >
+        <a href="" style="text-decoration: none" target="_blank">
+          <v-btn
+            rounded
+            class="module-default__goto-discord ma-2 pl-auto pr-auto font-weight-bold"
+            x-large
+            depressed
+            outlined
+            color="#ae90b0"
+            ><v-icon left>mdi-account-group</v-icon>Chat with peers</v-btn
+          ></a
+        >
+
+        <!-- <v-btn
+          rounded
+          outlined
+          class="ma-2 pl-auto pr-auto font-weight-bold"
+          x-large
+          depressed
+          dark
+          color="#ae90b0"
+          >Chat with everyone in Program</v-btn
+        > -->
+        <!-- <div class="d-flex justify-center"> -->
+
         <!-- </div> -->
 
         <!-- <v-btn rounded class="ma-2 font-weight-bold" color="white" x-small depressed
