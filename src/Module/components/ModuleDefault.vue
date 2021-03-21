@@ -94,7 +94,7 @@
 
       <!-- POST-LINKED DISCORD START -->
       <v-container v-if="accessToken.length">
-        <v-row>
+        <v-row v-if="userType !== 'stakeholder'">
           <v-avatar class="ma-3 lighten-2" color="grey" size="60"
             ><img v-if="avatarSource.length" :src="avatarSource"
           /></v-avatar>
@@ -107,6 +107,20 @@
             readonly
             outlined
             :value="discordUsername"
+            label="Your Discord Username"
+          ></v-text-field>
+        </v-row>
+        <v-row v-if="userType === 'stakeholder'">
+          <v-avatar class="ma-3 lighten-2" color="grey" size="60"></v-avatar>
+
+          <v-text-field
+            class="ma-3"
+            append-outer-icon="mdi-discord"
+            rounded
+            x-large
+            readonly
+            outlined
+            value="Participant Discord Username"
             label="Your Discord Username"
           ></v-text-field>
         </v-row>
