@@ -29,7 +29,7 @@ export default Vue.extend({
         }
       }
     };
-    const userTypeStub = 'organizer';
+    const userTypeStub = 'stakeholder';
 
     return { userDoc, userTypeStub };
   }
