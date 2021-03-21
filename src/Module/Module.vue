@@ -101,7 +101,9 @@
           </div>
         </div>
         <div class="module__page">
-          <keep-alive> <component :is="getComponent" :user-doc="userDoc" /> </keep-alive>
+          <keep-alive>
+            <component :is="getComponent" :user-type="userType" :user-doc="userDoc" />
+          </keep-alive>
         </div>
       </div>
     </div>

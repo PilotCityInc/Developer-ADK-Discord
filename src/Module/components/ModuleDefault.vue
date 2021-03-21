@@ -63,6 +63,7 @@
           target="_blank"
         >
           <v-btn
+            :disabled="userType === 'stakeholder'"
             rounded
             class="module-default__goto-discord ma-2 pl-auto pr-auto font-weight-bold"
             x-large
@@ -78,6 +79,7 @@
           target="_blank"
         >
           <v-btn
+            :disabled="userType === 'stakeholder'"
             rounded
             class="module-default__goto-discord ma-2 pl-auto pr-auto font-weight-bold"
             x-large
@@ -115,7 +117,7 @@
             class="module-default__goto-discord ma-2 pl-auto pr-auto font-weight-bold"
             x-large
             depressed
-            disabled
+            :disabled="userType === 'participant' || userType === 'stakeholder'"
             color="#ae90b0"
             ><v-icon left>mdi-account-supervisor-circle</v-icon>Chat with Team</v-btn
           >
@@ -127,6 +129,7 @@
         >
           <v-btn
             rounded
+            :disabled="userType === 'stakeholder'"
             class="module-default__goto-discord ma-2 pl-auto pr-auto font-weight-bold"
             x-large
             depressed
@@ -138,6 +141,7 @@
         <a href="" style="text-decoration: none" target="_blank">
           <v-btn
             rounded
+            :disabled="userType === 'stakeholder'"
             class="module-default__goto-discord ma-2 pl-auto pr-auto font-weight-bold"
             x-large
             depressed
