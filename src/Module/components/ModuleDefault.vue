@@ -194,6 +194,13 @@ export default defineComponent({
     userDoc: {
       required: true,
       type: Object as PropType<MongoDoc>
+    },
+    userType: {
+      required: true,
+      type: String
+      // participant: '',
+      // organizer: '',
+      // stakeholder: ''
     }
   },
   setup(props) {
