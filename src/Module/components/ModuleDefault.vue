@@ -201,6 +201,11 @@ export default defineComponent({
       // participant: '',
       // organizer: '',
       // stakeholder: ''
+    },
+    mongoUser: {
+      required: false,
+      type: Object,
+      default: () => {}
     }
   },
   setup(props) {
@@ -211,17 +216,24 @@ export default defineComponent({
     });
 
     const getUser = async () => {
-      const {
-        data: { id, avatar, username, discriminator }
-      } = await axios.get(API_ENDPOINT, {
-        headers: { Authorization: `Bearer ${state.accessToken}` }
-      });
-      state.avatarSource =
-        avatar !== null
-          ? `https://cdn.discordapp.com/avatars/${id}/${avatar}.png`
-          : 'https://discordapp.com/assets/322c936a8c8be1b803cd94861bdfa868.png';
-
-      state.discordUsername = `${username} #${discriminator}`;
+      try {
+        const {
+          data: { id, avatar, username, discriminator }
+        } = await axios.get(API_ENDPOINT, {
+          headers: { Authorization: `Bearer ${state.accessToken}` }
+        });
+        state.avatarSource =
+          avatar !== null
+            ? `https://cdn.discordapp.com/avatars/${id}/${avatar}.png`
+            : 'https://discordapp.com/assets/322c936a8c8be1b803cd94861bdfa868.png';
+        state.discordUsername = `${username} #${discriminator}`;
+      } catch (err) {
+        props.mongoUser?.functions.callFunction(
+          'refreshDiscordAccessToken',
+          props.userDoc.data._id.toString(),
+          props.userDoc.data.discordRefreshToken
+        );
+      }
     };
 
     if (props.userDoc.data.discordAccessToken) {
@@ -230,19 +242,13 @@ export default defineComponent({
       getUser();
     }
 
-    props.userDoc.changeStream.on('change', ({ fullDocument }) => {
-      state.accessToken = fullDocument.accessToken;
-      getUser();
+    props.userDoc.changeStream.next().then((next: Record<string, any>) => {
+      const token = next.value.fullDocument.discordAccessToken;
+      if (token) {
+        state.accessToken = token;
+        getUser();
+      }
     });
-
-    // ! if no changeStream, use this with a db call
-    // window.onfocus = () => {
-    //   getUser();
-    // };
-
-    // window.onblur = () => {
-    //   getUser();
-    // };
 
     const setupInstructions = ref({
       description: '',

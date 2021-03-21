@@ -102,7 +102,12 @@
         </div>
         <div class="module__page">
           <keep-alive>
-            <component :is="getComponent" :user-type="userType" :user-doc="userDoc" />
+            <component
+              :is="getComponent"
+              :user-type="userType"
+              :user-doc="userDoc"
+              :mongo-user="mongoUser"
+            />
           </keep-alive>
         </div>
       </div>
@@ -284,6 +289,11 @@ export default defineComponent({
       // participant: '',
       // organizer: '',
       // stakeholder: ''
+    },
+    mongoUser: {
+      required: false,
+      type: Object,
+      default: () => {}
     }
   },
   setup(props) {
