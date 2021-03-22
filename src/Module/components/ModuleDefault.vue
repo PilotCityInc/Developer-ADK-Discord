@@ -125,44 +125,40 @@
           ></v-text-field>
         </v-row>
 
-        <a href="" style="text-decoration: none" target="_blank">
-          <v-btn
-            rounded
-            class="module-default__goto-discord ma-2 pl-auto pr-auto font-weight-bold"
-            x-large
-            depressed
-            :disabled="userType === 'participant' || userType === 'stakeholder'"
-            color="#ae90b0"
-            ><v-icon left>mdi-account-supervisor-circle</v-icon>Chat with Team</v-btn
-          >
-        </a>
-        <a
-          href="https://discord.com/channels/688863898686062675/738994257200939068"
-          style="text-decoration: none"
+        <v-btn
+          rounded
+          href=""
           target="_blank"
+          class="module-default__goto-discord ma-2 pl-auto pr-auto font-weight-bold"
+          x-large
+          depressed
+          :disabled="userType === 'participant' || userType === 'stakeholder'"
+          color="#ae90b0"
+          ><v-icon left>mdi-account-supervisor-circle</v-icon>Chat with Team</v-btn
         >
-          <v-btn
-            rounded
-            :disabled="userType === 'stakeholder'"
-            class="module-default__goto-discord ma-2 pl-auto pr-auto font-weight-bold"
-            x-large
-            depressed
-            dark
-            color="#ae90b0"
-            ><v-icon left>mdi-discord</v-icon>Chat with community</v-btn
-          ></a
+        <v-btn
+          rounded
+          href="https://discord.com/channels/688863898686062675/738994257200939068"
+          target="_blank"
+          :disabled="userType === 'stakeholder'"
+          class="module-default__goto-discord ma-2 pl-auto pr-auto font-weight-bold"
+          x-large
+          depressed
+          dark
+          color="#ae90b0"
+          ><v-icon left>mdi-discord</v-icon>Chat with community</v-btn
         >
-        <a href="" style="text-decoration: none" target="_blank">
-          <v-btn
-            rounded
-            :disabled="userType === 'stakeholder'"
-            class="module-default__goto-discord ma-2 pl-auto pr-auto font-weight-bold"
-            x-large
-            depressed
-            outlined
-            color="#ae90b0"
-            ><v-icon left>mdi-account-group</v-icon>Chat with peers</v-btn
-          ></a
+        <v-btn
+          rounded
+          href=""
+          target="_blank"
+          :disabled="userType === 'stakeholder'"
+          class="module-default__goto-discord ma-2 pl-auto pr-auto font-weight-bold"
+          x-large
+          depressed
+          outlined
+          color="#ae90b0"
+          ><v-icon left>mdi-account-group</v-icon>Chat with peers</v-btn
         >
 
         <!-- <v-btn

@@ -20,16 +20,18 @@ export default Vue.extend({
         discordAccessToken: 'zWXhmAgKJtSN461vUWv3f1jmBUjK68' // * test by putting your account's access token here
       },
       changeStream: {
-        on(event, callback) {
-          return {
-            fullDocument: {
-              discordAccessToken: ''
-            }
-          };
+        next() {
+          return new Promise((resolve, reject) => {
+            resolve({
+              fullDocument: {
+                discordAccessToken: ''
+              }
+            });
+          });
         }
       }
     };
-    const userTypeStub = 'stakeholder';
+    const userTypeStub = 'participant';
 
     return { userDoc, userTypeStub };
   }
