@@ -92,7 +92,7 @@
     <!-- PRE-LINKED DISCORD END -->
 
     <!-- POST-LINKED DISCORD START -->
-    <v-container v-if="accessToken.length" class="mt-12 d-flex justify-center pa-6">
+    <v-container v-if="accessToken.length" class="mt-12 d-flex flex-column justify-center pa-6">
       <v-row v-if="userType !== 'stakeholder'">
         <v-avatar class="ma-3 lighten-2" color="grey" size="60"
           ><img v-if="avatarSource.length" :src="avatarSource"
@@ -136,18 +136,20 @@
           color="#ae90b0"
           ><v-icon left>mdi-account-supervisor-circle</v-icon>Team Chat</v-btn
         > -->
-      <v-btn
-        rounded
-        href="https://discord.com/channels/688863898686062675/738994257200939068"
-        target="_blank"
-        :disabled="userType === 'stakeholder'"
-        class="module-default__goto-discord ma-2 pl-auto pr-auto font-weight-bold"
-        x-large
-        depressed
-        dark
-        color="#ae90b0"
-        ><v-icon left>mdi-discord</v-icon>Community Chat</v-btn
-      >
+      <v-row>
+        <v-btn
+          rounded
+          href="https://discord.com/channels/688863898686062675/738994257200939068"
+          target="_blank"
+          :disabled="userType === 'stakeholder'"
+          class="module-default__goto-discord ma-2 pl-auto pr-auto font-weight-bold"
+          x-large
+          depressed
+          dark
+          color="#ae90b0"
+          ><v-icon left>mdi-discord</v-icon>Community Chat</v-btn
+        >
+      </v-row>
       <!-- <v-btn
           rounded
           href=""
