@@ -92,7 +92,7 @@
     <!-- PRE-LINKED DISCORD END -->
 
     <!-- POST-LINKED DISCORD START -->
-    <v-container v-if="accessToken.length">
+    <v-container v-if="accessToken.length" class="mt-12 d-flex justify-center pa-6">
       <v-row v-if="userType !== 'stakeholder'">
         <v-avatar class="ma-3 lighten-2" color="grey" size="60"
           ><img v-if="avatarSource.length" :src="avatarSource"
