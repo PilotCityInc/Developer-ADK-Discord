@@ -42,7 +42,7 @@
       buffer-value="100"
       stream
     />
-    <div class="pa-12 mt-12">
+    <div class="pa-2 mt-12">
       <!-- ENTER CONTENT HERE -->
       <!-- DESIGN YOUR ACTIVITY HERE / COMMENT OUT WHEN YOU'VE STARTED DESIGNING -->
       <!-- <div class="module-default__none">Design your activity here</div> -->
@@ -121,7 +121,7 @@
             x-large
             readonly
             outlined
-            value="Participant Discord Username"
+            value="Discord username hidden"
             label="Your Discord Username"
           ></v-text-field>
         </v-row>
