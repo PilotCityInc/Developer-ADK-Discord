@@ -102,6 +102,7 @@
           <v-text-field
             class="ma-3"
             append-outer-icon="mdi-discord"
+            append
             rounded
             x-large
             readonly
@@ -125,7 +126,7 @@
           ></v-text-field>
         </v-row>
 
-        <v-btn
+        <!-- <v-btn
           rounded
           href=""
           target="_blank"
@@ -134,8 +135,8 @@
           depressed
           :disabled="userType === 'participant' || userType === 'stakeholder'"
           color="#ae90b0"
-          ><v-icon left>mdi-account-supervisor-circle</v-icon>Chat with Team</v-btn
-        >
+          ><v-icon left>mdi-account-supervisor-circle</v-icon>Team Chat</v-btn
+        > -->
         <v-btn
           rounded
           href="https://discord.com/channels/688863898686062675/738994257200939068"
@@ -146,9 +147,9 @@
           depressed
           dark
           color="#ae90b0"
-          ><v-icon left>mdi-discord</v-icon>Chat with community</v-btn
+          ><v-icon left>mdi-discord</v-icon>Community Chat</v-btn
         >
-        <v-btn
+        <!-- <v-btn
           rounded
           href=""
           target="_blank"
@@ -158,8 +159,8 @@
           depressed
           outlined
           color="#ae90b0"
-          ><v-icon left>mdi-account-group</v-icon>Chat with peers</v-btn
-        >
+          ><v-icon left>mdi-account-group</v-icon>Program Chat</v-btn
+        > -->
 
         <!-- <v-btn
           rounded
