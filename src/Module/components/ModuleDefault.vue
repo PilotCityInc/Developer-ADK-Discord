@@ -93,7 +93,7 @@
 
     <!-- POST-LINKED DISCORD START -->
     <v-container v-if="accessToken.length" class="mt-12 d-flex flex-column justify-center pa-6">
-      <v-row v-if="userType !== 'stakeholder'">
+      <v-row v-if="userType !== 'stakeholder'" class="pa-6">
         <v-avatar class="ma-3 lighten-2" color="grey" size="60"
           ><img v-if="avatarSource.length" :src="avatarSource"
         /></v-avatar>
@@ -110,7 +110,7 @@
           label="Your Discord Username"
         ></v-text-field>
       </v-row>
-      <v-row v-if="userType === 'stakeholder'">
+      <v-row v-if="userType === 'stakeholder'" class="pa-6">
         <v-avatar class="ma-3 lighten-2" color="grey" size="60"></v-avatar>
 
         <v-text-field
@@ -136,7 +136,7 @@
           color="#ae90b0"
           ><v-icon left>mdi-account-supervisor-circle</v-icon>Team Chat</v-btn
         > -->
-      <v-row>
+      <v-row class="pa-6">
         <v-btn
           rounded
           href="https://discord.com/channels/688863898686062675/738994257200939068"
