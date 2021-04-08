@@ -51,20 +51,20 @@
         > -->
 
     <!-- PRE-LINKED DISCORD START -->
-    <v-container v-if="!accessToken.length">
-      <div class="overline d-flex justify-center font-weight-bold mt-10">
+    <v-container v-if="!accessToken.length" class="pa-3">
+      <div class="overline d-flex justify-center font-weight-black mt-10">
         <!-- Chat with team & PilotCity student community -->
         Join the PilotCity online student community
       </div>
       <a
-        href="https://discord.com/register?redirect_to=%2Foauth2%2Fauthorize%3Fclient_id%3D818178557939023912%26redirect_uri%3Dhttps%253A%252F%252Fpilotcity.com%252Fdiscordconfirmation%26response_type%3Dcode%26scope%3Didentify%2520email%2520guilds.join%2520gdm.join"
+        href="https://discord.com/register?redirect_to=%2Foauth2%2Fauthorize%3Fclient_id%3D818178557939023912%26redirect_uri%3Dhttps%253A%252F%252Fwww.pilotcity.com%252Fdiscordconfirmation%26response_type%3Dcode%26scope%3Didentify%2520guilds.join%2520gdm.join%2520email"
         style="text-decoration: none"
         target="_blank"
       >
         <v-btn
           :disabled="userType === 'stakeholder'"
           rounded
-          class="module-default__goto-discord ma-6 pl-auto pr-auto font-weight-bold"
+          class="module-default__goto-discord ma-2 pl-auto pr-auto font-weight-bold"
           x-large
           depressed
           dark
@@ -80,7 +80,7 @@
         <v-btn
           :disabled="userType === 'stakeholder'"
           rounded
-          class="module-default__goto-discord ma-6 pl-auto pr-auto font-weight-bold"
+          class="module-default__goto-discord ma-2 pl-auto pr-auto font-weight-bold"
           x-large
           depressed
           outlined
