@@ -73,7 +73,7 @@
         ></a
       >
       <a
-        href="https://discord.com/api/oauth2/authorize?client_id=818178557939023912&redirect_uri=https%3A%2F%2Fpilotcity.com%2Fdiscordconfirmation&response_type=code&scope=identify%20email%20guilds.join%20gdm.join"
+        href="https://discord.com/api/oauth2/authorize?client_id=818178557939023912&redirect_uri=https%3A%2F%2Fwww.pilotcity.com%2Fdiscordconfirmation&response_type=code&scope=identify%20guilds.join%20gdm.join%20email"
         style="text-decoration: none"
         target="_blank"
       >
