@@ -52,7 +52,7 @@
 
     <!-- PRE-LINKED DISCORD START -->
     <v-container v-if="!accessToken.length">
-      <div class="overline d-flex justify-center font-weight-bold">
+      <div class="overline d-flex justify-center font-weight-bold mt-10">
         <!-- Chat with team & PilotCity student community -->
         Join the PilotCity online student community
       </div>
@@ -64,7 +64,7 @@
         <v-btn
           :disabled="userType === 'stakeholder'"
           rounded
-          class="module-default__goto-discord ma-2 pl-auto pr-auto font-weight-bold"
+          class="module-default__goto-discord ma-6 pl-auto pr-auto font-weight-bold"
           x-large
           depressed
           dark
@@ -80,12 +80,12 @@
         <v-btn
           :disabled="userType === 'stakeholder'"
           rounded
-          class="module-default__goto-discord ma-2 pl-auto pr-auto font-weight-bold"
+          class="module-default__goto-discord ma-6 pl-auto pr-auto font-weight-bold"
           x-large
           depressed
           outlined
           color="#ae90b0"
-          >Connect existing account</v-btn
+          ><v-icon left>mdi-account-circle-outline</v-icon>Connect existing account</v-btn
         ></a
       >
     </v-container>
