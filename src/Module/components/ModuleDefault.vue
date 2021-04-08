@@ -125,17 +125,6 @@
         ></v-text-field>
       </v-row>
 
-      <!-- <v-btn
-          rounded
-          href=""
-          target="_blank"
-          class="module-default__goto-discord ma-2 pl-auto pr-auto font-weight-bold"
-          x-large
-          depressed
-          :disabled="userType === 'participant' || userType === 'stakeholder'"
-          color="#ae90b0"
-          ><v-icon left>mdi-account-supervisor-circle</v-icon>Team Chat</v-btn
-        > -->
       <v-row class="pl-6 pr-6">
         <v-btn
           rounded
@@ -147,22 +136,42 @@
           depressed
           dark
           color="#ae90b0"
-          ><v-icon left>mdi-discord</v-icon>Community Chat</v-btn
+          ><v-icon left>mdi-discord</v-icon>Explore Community</v-btn
         >
       </v-row>
-      <!-- <v-btn
+
+      <div class="overline d-flex justify-center font-weight-black mt-6 mb-6">
+        <!-- Chat with team & PilotCity student community -->
+        Coming Soon
+      </div>
+
+      <v-row class="pl-6 pr-6">
+        <v-btn
           rounded
           href=""
           target="_blank"
-          :disabled="userType === 'stakeholder'"
+          class="module-default__goto-discord ma-2 pl-auto pr-auto font-weight-bold white--text"
+          x-large
+          depressed
+          :disabled="userType === 'participant' || userType === 'stakeholder'"
+          color="#ae90b0"
+          ><v-icon left>mdi-account-supervisor-circle</v-icon>Talk to Team</v-btn
+        >
+      </v-row>
+      <v-row class="pl-6 pr-6">
+        <v-btn
+          rounded
+          href=""
+          target="_blank"
+          :disabled="userType === 'participant' || userType === 'stakeholder'"
           class="module-default__goto-discord ma-2 pl-auto pr-auto font-weight-bold"
           x-large
           depressed
           outlined
           color="#ae90b0"
-          ><v-icon left>mdi-account-group</v-icon>Program Chat</v-btn
-        > -->
-
+          ><v-icon left>mdi-account-group</v-icon>Program Participants Chat</v-btn
+        >
+      </v-row>
       <!-- <v-btn
           rounded
           outlined
