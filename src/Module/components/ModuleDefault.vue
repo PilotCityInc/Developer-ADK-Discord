@@ -204,6 +204,7 @@
 <script lang="ts">
 import { ref, reactive, toRefs, PropType, defineComponent } from '@vue/composition-api';
 import axios from 'axios';
+import { getModAdk } from 'pcv4lib/src';
 import Instruct from './ModuleInstruct.vue';
 import { MongoDoc } from '../types';
 
@@ -219,6 +220,11 @@ export default defineComponent({
       required: true,
       type: Object as PropType<MongoDoc>
     },
+    studentDoc: {
+      required: false,
+      type: Object as PropType<MongoDoc>,
+      default: () => {}
+    },
     userType: {
       required: true,
       type: String
@@ -232,12 +238,25 @@ export default defineComponent({
       default: () => {}
     }
   },
-  setup(props) {
+  setup(props, ctx) {
     const state = reactive({
       avatarSource: '',
       discordUsername: 'Username #2938',
-      accessToken: ''
+      accessToken: '',
+      studentAdkIndex: -1
     });
+
+    if (props.studentDoc) {
+      const { adkData: studentAdkData, adkIndex: studentAdkIndex } = getModAdk(
+        props,
+        ctx.emit,
+        'community',
+        {},
+        'studentDoc',
+        'inputStudentDoc'
+      );
+      state.studentAdkIndex = studentAdkIndex;
+    }
 
     const getUser = async () => {
       try {
@@ -251,6 +270,10 @@ export default defineComponent({
             ? `https://cdn.discordapp.com/avatars/${id}/${avatar}.png`
             : 'https://discordapp.com/assets/322c936a8c8be1b803cd94861bdfa868.png';
         state.discordUsername = `${username} #${discriminator}`;
+        props.studentDoc!.update(() => ({
+          isComplete: true,
+          adkIndex: state.studentAdkIndex
+        }));
       } catch (err) {
         props.mongoUser?.functions.callFunction(
           'refreshDiscordAccessToken',

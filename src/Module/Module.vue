@@ -106,6 +106,7 @@
               :is="getComponent"
               :user-type="userType"
               :user-doc="userDoc"
+              :student-doc="studentDoc"
               :mongo-user="mongoUser"
             />
           </keep-alive>
@@ -282,6 +283,11 @@ export default defineComponent({
     userDoc: {
       required: true,
       type: Object as PropType<MongoDoc>
+    },
+    studentDoc: {
+      required: false,
+      type: Object as PropType<MongoDoc>,
+      default: () => {}
     },
     userType: {
       required: true,
