@@ -209,6 +209,7 @@ import Instruct from './ModuleInstruct.vue';
 import { MongoDoc } from '../types';
 
 const API_ENDPOINT = 'https://discord.com/api/users/@me';
+const CHANNEL_URL = 'https://discord.com/channels/@me/';
 
 export default defineComponent({
   name: 'ModuleDefault',
@@ -216,11 +217,20 @@ export default defineComponent({
     Instruct
   },
   props: {
+    value: {
+      required: true,
+      type: Object as PropType<MongoDoc>
+    },
     userDoc: {
       required: true,
       type: Object as PropType<MongoDoc>
     },
     studentDoc: {
+      required: false,
+      type: Object as PropType<MongoDoc>,
+      default: () => {}
+    },
+    teamDoc: {
       required: false,
       type: Object as PropType<MongoDoc>,
       default: () => {}
@@ -297,6 +307,11 @@ export default defineComponent({
       }
     });
 
+    const getChannelUrl = (id: string) => CHANNEL_URL + id;
+
+    // ! set hrefs like this getChannelUrl(value.data.discordChannelId) for prorgam discord channel
+    // ! set hrefs like this getChannelUrl(teamDoc.data.discordChannelId) for team discord channel
+
     const setupInstructions = ref({
       description: '',
       instructions: ['', '', '']
@@ -305,6 +320,7 @@ export default defineComponent({
     return {
       ...toRefs(state),
       setupInstructions,
+      getChannelUrl,
       showInstructions
     };
   }
