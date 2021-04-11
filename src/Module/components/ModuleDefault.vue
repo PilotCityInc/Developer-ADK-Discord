@@ -52,7 +52,7 @@
 
     <!-- PRE-LINKED DISCORD START -->
     <v-container v-if="!accessToken.length" class="mt-12 d-flex flex-column justify-center pa-6">
-      <v-row class="pl-6 pr-6 mb-3 overline font-weight-black">
+      <v-row class="pl-6 pr-6 mb-3 overline d-flex justify-center font-weight-black">
         <!-- Chat with team & PilotCity student community -->
         Join the PilotCity online student community
       </v-row>
