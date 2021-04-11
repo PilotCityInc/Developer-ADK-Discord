@@ -204,10 +204,12 @@
 <script lang="ts">
 import { ref, reactive, toRefs, PropType, defineComponent } from '@vue/composition-api';
 import axios from 'axios';
+import { getModAdk } from 'pcv4lib/src';
 import Instruct from './ModuleInstruct.vue';
 import { MongoDoc } from '../types';
 
 const API_ENDPOINT = 'https://discord.com/api/users/@me';
+const CHANNEL_URL = 'https://discord.com/channels/@me/';
 
 export default defineComponent({
   name: 'ModuleDefault',
@@ -215,9 +217,23 @@ export default defineComponent({
     Instruct
   },
   props: {
+    value: {
+      required: true,
+      type: Object as PropType<MongoDoc>
+    },
     userDoc: {
       required: true,
       type: Object as PropType<MongoDoc>
+    },
+    studentDoc: {
+      required: false,
+      type: Object as PropType<MongoDoc>,
+      default: () => {}
+    },
+    teamDoc: {
+      required: false,
+      type: Object as PropType<MongoDoc>,
+      default: () => {}
     },
     userType: {
       required: true,
@@ -232,12 +248,25 @@ export default defineComponent({
       default: () => {}
     }
   },
-  setup(props) {
+  setup(props, ctx) {
     const state = reactive({
       avatarSource: '',
       discordUsername: 'Username #2938',
-      accessToken: ''
+      accessToken: '',
+      studentAdkIndex: -1
     });
+
+    if (props.studentDoc) {
+      const { adkData: studentAdkData, adkIndex: studentAdkIndex } = getModAdk(
+        props,
+        ctx.emit,
+        'community',
+        {},
+        'studentDoc',
+        'inputStudentDoc'
+      );
+      state.studentAdkIndex = studentAdkIndex;
+    }
 
     const getUser = async () => {
       try {
@@ -251,6 +280,10 @@ export default defineComponent({
             ? `https://cdn.discordapp.com/avatars/${id}/${avatar}.png`
             : 'https://discordapp.com/assets/322c936a8c8be1b803cd94861bdfa868.png';
         state.discordUsername = `${username} #${discriminator}`;
+        props.studentDoc!.update(() => ({
+          isComplete: true,
+          adkIndex: state.studentAdkIndex
+        }));
       } catch (err) {
         props.mongoUser?.functions.callFunction(
           'refreshDiscordAccessToken',
@@ -274,6 +307,11 @@ export default defineComponent({
       }
     });
 
+    const getChannelUrl = (id: string) => CHANNEL_URL + id;
+
+    // ! set hrefs like this getChannelUrl(value.data.discordChannelId) for prorgam discord channel
+    // ! set hrefs like this getChannelUrl(teamDoc.data.discordChannelId) for team discord channel
+
     const setupInstructions = ref({
       description: '',
       instructions: ['', '', '']
@@ -282,6 +320,7 @@ export default defineComponent({
     return {
       ...toRefs(state),
       setupInstructions,
+      getChannelUrl,
       showInstructions
     };
   }

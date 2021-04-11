@@ -104,8 +104,11 @@
           <keep-alive>
             <component
               :is="getComponent"
+              v-model="value"
+              :team-doc="teamDoc"
               :user-type="userType"
               :user-doc="userDoc"
+              :student-doc="studentDoc"
               :mongo-user="mongoUser"
             />
           </keep-alive>
@@ -279,9 +282,23 @@ export default defineComponent({
     'module-preview': Module.Default
   },
   props: {
+    value: {
+      required: true,
+      type: Object as PropType<MongoDoc>
+    },
     userDoc: {
       required: true,
       type: Object as PropType<MongoDoc>
+    },
+    studentDoc: {
+      required: false,
+      type: Object as PropType<MongoDoc>,
+      default: () => {}
+    },
+    teamDoc: {
+      required: false,
+      type: Object as PropType<MongoDoc>,
+      default: () => {}
     },
     userType: {
       required: true,

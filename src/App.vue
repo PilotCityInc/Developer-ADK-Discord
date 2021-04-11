@@ -1,6 +1,11 @@
 <template>
   <v-app>
-    <Module :user-doc="userDoc" :user-type="userTypeStub" />
+    <Module
+      v-model="programDoc"
+      :team-doc="teamDoc"
+      :user-doc="userDoc"
+      :user-type="userTypeStub"
+    />
   </v-app>
 </template>
 
@@ -15,6 +20,20 @@ export default Vue.extend({
     Module
   },
   setup() {
+    const programDoc = {
+      data: {
+        discordChannelId: 'adf'
+      },
+      update: () => {},
+      changeStream: {}
+    };
+    const teamDoc = {
+      data: {
+        discordChannelId: 'adf'
+      },
+      update: () => {},
+      changeStream: {}
+    };
     const userDoc = {
       data: {
         discordAccessToken: 'zWXhmAgKJtSN461vUWv3f1jmBUjK68' // * test by putting your account's access token here
@@ -33,7 +52,7 @@ export default Vue.extend({
     };
     const userTypeStub = 'participant';
 
-    return { userDoc, userTypeStub };
+    return { userDoc, teamDoc, programDoc, userTypeStub };
   }
 });
 </script>
