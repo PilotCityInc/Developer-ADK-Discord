@@ -51,12 +51,12 @@
         > -->
 
     <!-- PRE-LINKED DISCORD START -->
-    <v-container v-if="!accessToken.length" class="pa-3">
-      <div class="overline d-flex justify-center font-weight-black mt-10">
+    <div v-if="!accessToken.length" class="module-default__container-discord mt-12">
+      <div class="overline d-flex justify-center font-weight-black">
         <!-- Chat with team & PilotCity student community -->
         Join the PilotCity online student community
       </div>
-      <v-row class="pl-6 pr-6">
+      <div class="pl-6 pr-6 mt-6">
         <a
           href="https://discord.com/register?redirect_to=%2Foauth2%2Fauthorize%3Fclient_id%3D818178557939023912%26redirect_uri%3Dhttps%253A%252F%252Fwww.pilotcity.com%252Fdiscordconfirmation%26response_type%3Dcode%26scope%3Didentify%2520guilds.join%2520gdm.join%2520email"
           style="text-decoration: none"
@@ -73,8 +73,8 @@
             ><v-icon left>mdi-discord</v-icon>Create Discord Account</v-btn
           ></a
         >
-      </v-row>
-      <v-row class="pl-6 pr-6">
+      </div>
+      <div class="pl-6 pr-6">
         <a
           href="https://discord.com/api/oauth2/authorize?client_id=818178557939023912&redirect_uri=https%3A%2F%2Fwww.pilotcity.com%2Fdiscordconfirmation&response_type=code&scope=identify%20guilds.join%20gdm.join%20email"
           style="text-decoration: none"
@@ -91,8 +91,8 @@
             ><v-icon left>mdi-account-circle-outline</v-icon>Connect existing account</v-btn
           ></a
         >
-      </v-row>
-    </v-container>
+      </div>
+    </div>
     <!-- PRE-LINKED DISCORD END -->
 
     <!-- POST-LINKED DISCORD START -->
@@ -364,12 +364,16 @@ export default defineComponent({
     //  text-uppercase font-weight-bold text-subtitle-2 text-center
   }
 
-  &__container {
+  &__container-discord {
     // width: 100%;
     // padding: none;
     // margin: none;
     margin-top: 0px;
     padding: 0px;
+    display: flex;
+    max-width: 90%;
+    margin-left: auto;
+    margin-right: auto;
   }
   &__employer-title {
     font-size: 25px;
