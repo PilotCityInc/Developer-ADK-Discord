@@ -83,6 +83,43 @@
           ><v-icon left>mdi-account-circle-outline</v-icon>Connect existing account</v-btn
         >
       </v-row>
+      <v-row class="pl-6 pr-6 mb-3 mt-3 caption d-flex justify-center grey--text font-italic">
+        <!-- Chat with team & PilotCity student community -->
+        Can't access Discord? Try your mobile phone.
+      </v-row>
+      <!-- <div class="d-flex justify-center">
+        <v-checkbox
+          v-model="adkData.acknowledgeScope"
+          single-line
+          outlined
+          full-width
+          @click="$emit('update')"
+        >
+          <template v-slot:label>
+            <div>I acknowledge I have reviewed the following project scope</div>
+          </template>
+        </v-checkbox>
+      </div>
+      <div class="module-default__scope mt-3">
+        <v-btn
+          :disabled="userType === 'stakeholder' || !adkData.acknowledgeScope"
+          x-large
+          depressed
+          color="#3c9dcd"
+          class="white--text"
+          rounded
+          :loading="loading"
+          @click="process()"
+          >Complete</v-btn
+        >
+        <v-alert
+          v-if="success || error"
+          dense
+          class="mt-3 white--text presets__alert"
+          :color="success ? 'green' : 'red'"
+          >{{ message }}</v-alert
+        >
+      </div> -->
     </v-container>
     <!-- PRE-LINKED DISCORD END -->
 
@@ -241,7 +278,7 @@ export default defineComponent({
   setup(props, ctx) {
     const state = reactive({
       avatarSource: '',
-      discordUsername: 'Username #2938',
+      discordUsername: 'Username #0000',
       accessToken: '',
       studentAdkIndex: -1
     });
